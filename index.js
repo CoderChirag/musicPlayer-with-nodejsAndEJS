@@ -61,4 +61,4 @@ app.get("/songURL/:songId", cors(), (req, res) => {
     res.json(o);
 })
 
-app.listen(process.env.port || 4000, () => console.log("server started at port 4000"));
+app.listen(process.env.PORT || 4000, () => console.log("server started at port 4000"));
