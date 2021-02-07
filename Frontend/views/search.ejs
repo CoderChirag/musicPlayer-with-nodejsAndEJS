@@ -1,0 +1,13 @@
+<!-- Search Results Section -->
+<main>
+    <div class="search-results-container main">
+        <% for(let obj of result){ %>
+            <div class="search-result-tile">
+                <img src="<%= obj.imgUrl %>" alt="<%= obj.trackName %>">
+                <div class="search-song-name"><%= obj.trackName %></div>
+                <div class="search-artist-name"><%= obj.artistName %></div>
+                <i class="fas fa-play search-song-play" id="<%= obj.trackingId %>"></i>
+            </div> 
+        <% } %> 
+    </div>
+

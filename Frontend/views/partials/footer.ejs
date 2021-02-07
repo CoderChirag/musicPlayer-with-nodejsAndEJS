@@ -1,0 +1,53 @@
+    <!------------ Bottom Fixed Navigation bar Section ----------->
+    <nav class="bottom-nav">
+        <!--Bottom Navbar Image Section -->
+            <div class="bottom-img-div">
+                <img src="images/jeenaJeena.jpg" alt="" class="bottom-img" id="bottom-img">
+            </div>
+            <div class="bottom-img-desc">
+                <p id="bottom-song"><b>Jeena Jeena</b></p>
+                <p id="bottom-singer">Atif Aslam</p>
+            </div>
+            <div class="bottom-img-like fav">
+                <i class="fas fa-heart"></i>
+            </div>
+            <!-- Main Audio Player Section of Bottom Nav -->
+            <div class="audio">
+                <!-- Controls Section -->
+                <div class="controls">
+                    <img src="images/shuffle.svg" alt="" style="width: 20px;position: relative; top: -5px;" class="control-icon shuffle">
+                    <i class="fas fa-step-backward control-icon back" style="position: relative; top: -5px;"></i>
+                    <div class="play-div">
+                        <i class="fas fa-play control-icon play" id="play-btn" style="margin-left: 2px;"></i>
+                    </div>
+                    <i class="fas fa-step-forward control-icon forward" style="position: relative; top: -5px;"></i>
+                    <!-- style="width: 20px;position: relative; top: -5px;" -->
+                    <i class="fas fa-undo control-icon loop" id="replay" style="width: 20px;position: relative; top: -5px;"></i>
+                </div>
+                <!-- Main Player Section -->
+                <div class="player">
+                    <p style="color: #8E8E8E;" id="current-time">0:00</p>
+                    <div class="progress-div" id="player-bar">
+                        <div class="progress-bar" id="progress"></div>
+                        <div id="progress-tip"></div>
+                    </div>
+                    <p style="color: #8E8E8E;" class="ls" id="duration">3:49</p>
+                </div>
+            </div>
+            <!-- Extra Icons, that is, Playlist and Sound Bar Section of bottom nav -->
+            <div class="bottom-extra-icons-div">
+                <div class="bottom-extra-icon">
+                    <img src="images/playlist.svg" alt="" style="width: 30px;" class="control-icon playlist">
+                </div>
+                <div class="bottom-extra-icon">
+                    <i class="fas fa-volume-up control-icon audio-icon" style="font-size: 2rem; position: relative;top: -8px;margin-left: 20px;"></i>
+                </div>
+                <div class="soundbar">
+                    <div class="soundbar-progress"></div>
+                </div>
+            </div>
+        </nav>
+        <!-- Javascript File -->
+        <script src="index.js"></script>
+    </body>
+    </html>

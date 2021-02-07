@@ -1,0 +1,1318 @@
+:root{
+    --stations-box-shadow: 0 0px 10px 5px rgba(255,255,255,0.8), 0 0px 20px 5px rgba(255,255,255,0.7);
+    --stations-bg-gradient: linear-gradient( 90deg, #833ab4, #fd1d1d, #fcb045 );
+    --aside-head-bg-color: #4F40B7;
+    --aside-head-h4-bg-color: #ADFF2F;
+    --bottom-nav-bg-color: #282828;
+}
+/* Some General Stylings */
+*{
+    background-color: transparent;
+    color: white;
+}
+html, body{
+    height: 98%;
+}
+image{
+    width: 100%;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Verdana, sans-serif;
+    background-image: url("images/bg-1.jpg");
+    background-attachment: fixed;
+}
+h1{
+    font-family: Georgia, serif;
+}
+
+/* ------------------ Navbar ----------------------- */
+    /* Navbar Main Div */
+.nav{
+    width: 100%;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+}
+    /* Ninja Logo */
+.ninja{
+    margin: 0;
+    padding: 0;
+    height: 10%;
+}
+.ninja-logo{
+    height: 100px;
+    position: fixed;
+    z-index: 1;
+    top: -18px;
+}
+    /* Favourite Text Written on Nav and its animation*/
+.fav-nav-txt{
+    margin-top: 30px;
+    margin-left: 50px;
+    position: fixed;
+    left: 20%;
+    z-index: 1;
+    animation: fav-anime ease-in-out 5s infinite;
+    top: -20px;
+}
+    /* Fav Text animation */
+    /* It first rotates to 360deg on Y axis, i.e, it becomes mirror image of itself and then it scales up and finally it scales down again */
+@keyframes fav-anime{
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotateY(360deg);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+    /* Dino Img at right of Nav */
+.nav-right-img{
+    position: fixed;
+    right: 0%;
+    text-align: right;
+}
+.nav-right-profile{
+    width: 20%;
+    height: 60px;
+    border-radius: 100%;
+}
+    /* Bell Icon, red dot sign and thier animation */
+.notify{
+    font-size: 2rem;
+    float: right;
+    margin-top: 20px;
+    position: fixed;
+    top: 0%;
+    right: 8%;
+    animation: notify-anime ease-in-out 0.5s infinite;
+}
+    /* Red dot of Bell Icon */
+.notify::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    top: 5%;
+    right: -2%;
+    border-radius: 50%;
+    z-index: 1;
+}
+    /* Bell Icon Animation */
+    /* The bell icon first rotas to -15deg and the rotates to 15 deg and so on and thus it acts like a pendulum */
+@keyframes notify-anime{
+    0% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+    /* Search Bar */
+.search{
+    display: inline-block;
+    background-color: white;
+    border-radius: 5px;
+    width: 20%;
+    margin-top: 20px;
+    position: fixed;
+    left: 65%;
+}
+.search-btn{
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+.search-btn:focus{
+    outline: none;
+}
+.search-icon{
+    font-size: 1.2rem;
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 4px;
+    top: 15%;
+    left: 1%;
+}
+.search-input{
+    width: 85%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-left: 22px;
+    height: 35px;
+    border: none;
+    margin-top: 0px;
+    font-size: 1.2rem;
+    outline: none;
+}
+.search-input:focus{
+    outline: none;
+}
+
+/* ------------------- Main ---------------- */
+/* Main Section */
+main{
+    width: 100%;
+    height: 78%;
+    margin-top: -30px;
+}
+main h2{
+    font-size: 2rem;
+}
+/* Here I am creating the general layout, and hiding the scroll bars so that our page looks good */
+.main{
+    width: 70%;
+    float: left;
+    height:100%;
+    overflow: auto;
+    /* overflow should be scrollable but the scroll bar should be hidden*/
+    scrollbar-width: none; /* Hiding Scrollbars in Firefox */
+    -ms-overflow-style: none;  /* Hiding Scrollbars in Internet Explorer 10+ */
+}
+    /* Hiding Scrollbars in GOOGLE CHROME */
+.main::-webkit-scrollbar {
+    display: none;
+}
+    /* Top Carousel Section */
+.outer-carousel{
+    margin: 70px;
+    position: relative;
+}
+.carousel{
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    justify-content: space-around;
+}
+.carousel img{
+    border-radius: 25px;
+    width: 40%;
+    height: 35vh;
+    transition: all ease-in-out 0.2s;
+}
+.carousel1{
+    position: relative;
+    left: 100px;
+}
+.carousel2{
+    position: relative;
+    left: -40px;
+    z-index: 2;
+}
+.carousel3{
+    position: relative;
+    left: -146px;
+}
+    /* Carousel Hovering */
+.carousel img:hover{
+    z-index: 3;
+}
+.carousel1:hover{
+    transform: scale(1.2);
+}
+.carousel2:hover{
+    transform: scale(1.2);
+}
+.carousel3:hover{
+    transform: scale(1.2);
+}
+    /* Latest Releases Section */
+.latest-release-outer{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.latest-release-inner{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.latest-release-poster{
+    width: 20%;
+    margin-right: 80px;
+}
+    /* Latest Release Hovering */
+.latest-release-poster:hover img{
+    opacity: 0.5;
+}
+    /* Play Icon which is visible at the time of hover */
+.latest-play{
+    position: relative;
+    font-size: 1.5rem;
+    top: -65px;
+    left: 32px;
+    visibility: hidden;
+    cursor: pointer;
+}
+.latest-release-poster:hover .latest-play{
+    visibility: visible;
+}
+.humnava, .dilnasheen{
+    width: 100%;
+    height: 100px;
+}
+.latest-release-text{
+    width: 40%;
+    line-height: 20px;
+}
+.lat-desc-text-2{
+    opacity: 0.7;
+}
+    /* Popular Artists Section */
+.popular-artists{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.popular-artists > div{
+    width: 16%;
+}
+.popular-artists img{
+    width: 100%;
+    height: 140px;
+    border-radius: 50%;
+}
+    /* Popular Artists image hovering */
+.popular-artists img:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.popular-artists p{
+    text-align: center;
+}
+    /* Stations Section */
+.stations-main-div{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding: 25px;
+    padding-left: 45px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    box-shadow: var(--stations-box-shadow);
+    background-image: var(--stations-bg-gradient);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.stations-left-main-div{
+    width: 19%;
+    margin-top: -20px;
+    padding-top: 0;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+
+}
+.stations-left-1{
+    width: 100%;
+    height: 130px;
+    background-color: yellow;
+}
+.stations-left-2{
+    position: relative;
+    background-color: yellowgreen;
+    width: 80%;
+    height: 155px;
+    top: -9%;
+    left: 11%;
+}
+.stations-left-3{
+    position: relative;
+    background-color: orangered;
+    width: 80%;
+    height: 180px;
+    top: -9%;
+    left: 11%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.stations-img{
+    width: 70%;
+    animation: rotate 0.8s 1s ease-in-out infinite;
+}
+    /* Animation of disc icon which is present on the stations section */
+    /* It basically rotates to 360deg and then stops for 0.8s and then again rotates to 1.5 and so on */
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.stations-content-div{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.stations-content-div > div{
+    width: 20%;
+}
+.stations-content-div > div{
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+.stations-content-div img{
+    width: 100%;
+    border-radius: 50%;
+}
+.stations-content-div > div:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.stations-content-div p{
+    position: relative;
+    top: -51%;
+    left: 28%;
+}
+    /* Themes Section */
+.themes{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+    /* THemes Section Outermost Container */
+.themes-outer-div{
+    width: 30%;
+    cursor: pointer;
+    height: 13vw;
+    overflow: hidden;
+}
+/* Themes inner div which is to give background scaling effect on hovering*/
+.themes-inner-div{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+	background-size: cover;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    /* Giving  Bacckground images to all themes */
+.themes .themes-outer-div:nth-child(1) .themes-inner-div {
+	background-image: url("images/party.jpg");
+}
+/* electronic */
+.themes .themes-outer-div:nth-child(2) .themes-inner-div {
+	background-image: url("images/electronic.jpg");
+}
+/* road */
+.themes .themes-outer-div:nth-child(3) .themes-inner-div {
+	background-image: url("images/road.jpg");
+}
+    /* Giving transition effects to theme containers */
+    /* In this transition on hovering on the div tha background image scales up and the text written scales down giving it a perfect transition */
+.themes-outer-div:hover .themes-inner-div {
+	transform: scale(1.3);
+}
+.themes-outer-div .themes-inner-div span {
+	transform: scale(1.5);
+	transition: all ease-in-out 0.3s;
+}
+.themes-outer-div:hover .themes-inner-div span {
+	transform: scale(1);
+}
+.themes-inner-div::before {
+	content: "";
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.3s;
+}
+/* language sections */
+.language {
+	width: 80%;
+    margin: auto;
+    margin-top: 75px;
+}
+/* language content container */
+.language-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: baseline;
+	flex-wrap: wrap;
+	padding: 0px 2px;
+}
+/* image in language content */
+.language-content div img {
+	width: 10vw;
+	min-width: 60px;
+	height: 10vw;
+	min-height: 60px;
+	transition: box-shadow ease-in-out 0.1s;
+}
+/* hovering effects on language content items */
+.language-content div img:hover {
+	box-shadow: 0px 0px 10px 1px white;
+}
+/* items in language content */
+.language-content div {
+	margin: 2vw 0px;
+	width: 10.2vw;
+	min-width: 60px;
+}
+/* properties for release date and name of the song */
+.language-content div p:nth-child(2n) {
+	width: 100%;
+	word-wrap: break-word;
+}
+.language-content div p:nth-child(2n + 1) {
+	font-size: 12px;
+	font-weight: lighter;
+}
+
+/* ----------------- Search Menu Section ------------------- */
+.search-results-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.search-result-tile{
+    width: 30%;
+    margin: 20px;
+}
+.search-result-tile>img{
+    width: 100%;
+}
+.search-song-name{
+    margin-top: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: bold;
+}
+.search-artist-name{
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0.8;
+    margin-top: 3px;
+}
+.search-song-play{
+    background-color: transparent;
+    position: relative;
+    top: -240px;
+    left: 50%;
+    visibility: hidden;
+    font-size: 1.2rem;
+}
+.search-result-tile:hover .search-song-play{
+    visibility: visible;
+    cursor: pointer;
+}
+.search-result-tile:hover{
+    opacity: 0.5;
+}
+
+/* ----------------- Aside Section ------------------- */
+aside{
+    width: 30%;
+    height: 100%;
+    margin-top: 0px;
+    float: left;
+    overflow: auto;
+    scrollbar-width: none; /*Hiding scrollbars in  Firefox */
+    -ms-overflow-style: none;  /* Hiding scrollbars in Internet Explorer 10+ */
+}
+/* Hiding Scrollbars in GOOGLE CHROME */
+aside::-webkit-scrollbar {
+    display: none;
+}
+    /* Aside Head Section*/
+.aside-head{
+    position: fixed;
+    z-index: 1;
+    /* margin-top: -20px; */
+    width: 100%;
+    background-color: var(--aside-head-bg-color);
+}
+.aside-head-h1, .aside-head-h4{
+    display: inline-block;
+}
+.aside-head-h4{
+    color: var(--aside-head-h4-bg-color);
+    margin-left: 100px;
+    vertical-align: top;
+    text-decoration: none;
+}
+    /* these are the properties for the queue options box. the queue options box will be visible when one clicks on the queue button */
+.queue-options {
+	position: fixed;
+	right: 4%;
+	top: 18%;
+	background-color: #f8f9fa;
+	width: 10%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 1%;
+	box-sizing: border-box;
+	overflow: hidden;
+	z-index: 2; /* to cover the heart icon */
+	opacity: 0;
+	transform: scale(0);
+	transition: all ease-in-out 0.25s;
+}
+    /* when the queue option box becomes target */
+#queue-option-box:target {
+	opacity: 1;
+	transform: scale(1);
+}
+.queue-options {
+	color: black;
+}
+.queue-options p {
+	text-align: center;
+}
+.queue-options p a {
+	text-decoration: none;
+}
+    /* horizontal line in queue options box */
+hr {
+	width: 90%;
+	color: black;
+}
+    /* Aside Songs Section */
+.songs{
+    margin-top: 5px;
+    padding-top: 20px;
+    padding-left: 15px;
+    width: 90%;
+}
+.songs:hover{
+    border: 1px solid white;
+}
+.songs:first-of-type{
+    margin-top: 80px;
+}
+.songs > div{
+    display: inline-block;
+}
+.songs-srno{
+    vertical-align: top;
+    margin-top: 2px;
+    margin-right: 10px;
+    opacity: 0.7;
+}
+.songs-img-div{
+    width: 15%;
+    height: 52px;
+    margin-bottom: 0;
+}
+.songs-img{
+    width: 100%;
+    height: 52px;
+    margin-right: 20px;
+}
+.songs-img-play{
+    background-color: transparent;
+    position: relative;
+    top: -38px;
+    left: 40%;
+    visibility: hidden;
+}
+.songs-img-div:hover .songs-img-play{
+    visibility: visible;
+    cursor: pointer;
+}
+.songs-img-div:hover .songs-img{
+    opacity: 0.5;
+}
+.songs-desc{
+    vertical-align: top;
+    padding-top: 10px;
+    width: 125px;
+    overflow-x: hidden;
+    margin-left: 10px;
+}
+.songs-desc p{
+    height: 12px;
+    line-height: 0.2;
+    margin: 0;
+}
+.songs-desc p:last-of-type{
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-top: 10px;
+}
+/* Styling all Like Buttons on the page */
+.fa-heart{
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+.like{
+    vertical-align: top;
+    margin-top: 12px;
+    position: relative;
+    right: -30%;
+}
+.songs:hover .like i{
+    -webkit-text-stroke-color: red;
+}
+
+/* ---------------- Bottom Nav Section --------------- */
+.bottom-nav{
+    height: 95px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    background-color: var(--bottom-nav-bg-color);
+}
+.bottom-nav *{
+    background-color: var(--bottom-nav-bg-color);
+}
+.bottom-nav > div{
+    display: inline-block;
+}
+    /*Bottom Playing Song Image Section */
+.bottom-img-div{
+    position: fixed;
+    width: 5.5%;
+    height: 95px;
+    left: 4%;
+}
+.bottom-img{
+    width: 100%;
+    height: 65px;
+    padding-top: 10px;
+}
+.bottom-img-desc{
+    vertical-align: top;
+    padding-top: 0px;
+    width: 125px;
+    overflow-x: hidden;
+    position: fixed;
+    left: 10.5%;
+    line-height: 15px;
+}
+.bottom-img-desc p:last-of-type{
+    opacity: 0.4;
+}
+.bottom-img-like{
+    position: fixed;
+    left: 20%;
+    margin-top: 15px;
+}
+    /* Bottom Audio Player Section */
+.audio{
+    position: fixed;
+    left: 29%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.controls{
+    padding-left: 26%;
+}
+.play-div{
+    display: inline-block;
+    border: 2px solid #B3B3B3;
+    border-radius: 50%;
+    width: 37px;
+    font-size: 1.5rem;
+    padding-left: 15px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.controls *:not(.loop){
+    margin-right: 35px;
+}
+.player{
+    margin-top: -12px;
+}
+.player > p, .player > div{
+    display: inline-block;
+}
+.player *:not(.ls){
+    margin-right: 25px;
+}
+/* 31.306 */
+.progress-div{
+    height: 10px;
+    width: 500px;
+    background-color: #404040;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.progress-bar{
+    width: 0%;
+    border-radius: 10px;
+    height: 10px;
+    background-color: #31E380;
+}
+#progress-tip{
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: -1%;
+    top: -53%;
+    cursor: pointer;
+    visibility: hidden;
+}
+.progress-div:hover #progress-tip{
+    visibility: visible;
+}
+.control-icon{
+    color: #B3B3B3;
+}
+.fav, .notify, .control-icon{
+    cursor: pointer;
+}
+.bottom-extra-icons-div{
+    position: fixed;
+    margin-top: 35px;
+    left: 80%;
+}
+.bottom-extra-icons-div > div{
+    display: inline-block;
+    position: relative;
+}
+.soundbar{
+    height: 10px;
+    width: 115px;
+    border-radius: 10px;
+    background-color: #404040;
+    position: relative;
+    top: -12px;
+    margin-left: 15px;
+}
+.soundbar-progress{
+    width: 50%;
+    height: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #499628, #A2DE49);
+}
+.soundbar-progress::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    top: -70%;
+    left: 46%;
+    border: 3px solid #B3B3B3;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+/* For screens between laptop and tablet */
+@media only screen and (max-width: 1225px){
+    /* Aside Section */
+    .like{
+        right: -7%;
+    }
+    /* Bottom Navbar Section */
+    .audio{
+        left: 22%;
+    }
+    .progress-div{
+        width: 420px;
+    }
+    .bottom-extra-icons-div{
+        left: 75%;
+    }
+    /* Main Stations Section */
+    .stations-left-main-div{
+        width: 30%;
+    }
+    .stations-content-div p{
+        left: 16%;
+    }
+    #workout {
+        top: -45%;
+        font-size: 1rem!important;
+    }
+}
+
+/* ----------------------------- Creating Responisveness for Our Webpage --------------------------- */
+
+/*------------------- These are all the media queries for this page with the desktop first approach -------------*/
+/* For Ipad pro */
+@media only screen and (max-width: 1025px){
+    /* Navbar Section */
+    .search{
+        width: 29%;
+        margin-left: -120px;
+    }
+
+    /* Aside Section */
+    .aside-head-h4{
+        margin-left: 60px;
+    }
+    .queue-options{
+        right: 0%;
+        top: 14%;
+        width: 16%;
+    }
+    /* Bottom Navbar Section */
+    .bottom-img-like{
+        left: 25%;
+        z-index: 1;
+    }
+    .controls *:not(.loop){
+        margin-right: 15px;
+    }
+    .progress-div{
+        width: 300px;
+    }
+    .bottom-extra-icons-div{
+        left: 72%;
+    }
+    /* Main Carousel Section */
+    .carousel img{
+        width: 50%;
+    }
+    /* Main Popular Artists Section */
+    .popular-artists > div{
+        width: 30%;
+    }
+    /* Main Stations Section */
+    .stations-left-main-div{
+        margin-top:-20px;
+        padding-top: 0px;
+    }
+    .stations-content-div p{
+        font-size: 1rem!important;
+    }
+    #workout{
+        top: -52%;
+    }
+}
+
+/* For ipad and tablet screens */
+@media only screen and (max-width: 768px){
+    /* Top Navbar Section */
+    .fav-nav-txt{
+        display: none;
+    }
+    .search{
+        width: 40%;
+        left: 45%;
+    }
+    /* Aside Playlist Section */
+    .aside-head-h4{
+        margin-left: 20px;
+    } 
+    .queue-options{
+        top: 15%;
+    }
+    .songs:hover{
+        border: none;
+    }
+    .songs-img-div{
+        width: 20%;
+    }
+    .songs-desc{
+        width: 75px;
+    }
+    .like{
+        right: -4%;
+    }
+    .songs:hover .like i{
+        -webkit-text-stroke-color: white;
+    }
+    /* Bottom Navbar Section */
+    .bottom-img, .bottom-img-desc p, .bottom-img-like i{
+        display: none;
+    }
+    #progress-tip{
+        visibility: visible;
+    }
+    .audio{
+        left: 2%;
+    }
+    .bottom-extra-icons-div{
+        left: 62%;
+    }
+    /* Main Carousel Section */
+    .carousel img{
+        width: 60%;
+    }
+    .carousel1{
+        margin-left: 50px;
+    }
+    /* Main Latest Release Section */
+    .latest-release-poster{
+        width: 70%;
+    }
+    /* Main Stations Section */
+    #workout{
+        font-size: 0.8rem!important;
+    }
+}
+/* For Small Browser and Mobile Screens */
+@media only screen and (max-width: 670px){
+    /* Major Changes are there in this Media Query. The Biggest Change is that Layout is changed to Single section layout, i.e., Playlist section has now moved from right of the screen to bottom of the screen to fit on mobile.  */
+    body, html{
+        height: auto;
+    }
+    /* -------------- Top Navbar Section -------------- */
+    .nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: auto;
+        width: 90%;
+    }
+    .nav-right-img{
+        visibility: hidden;
+    }
+    .ninja-logo, .fav, .nav-right-img, .search{
+        position: relative;
+    }
+    .notify{
+        top: -2%;
+        right: 1%;
+    }
+    .notify i{
+        color: yellowgreen!important;
+    }
+    .search{
+        margin: 0;
+        margin-left: -50px;
+        width: 129%;
+    }
+    /*------------ Main Section ------------ */
+    .main{
+        width: 100%;
+        height: auto;
+        overflow: initial;
+        scrollbar-width: visible; /* Firefox */
+        -ms-overflow-style: unset;  /* Internet Explorer 10+ */
+    }
+    .main::-webkit-scrollbar {
+        display: visible;
+    }
+    /*------------- Aside Section -----------------*/
+    aside{
+        width: 100%;
+        height: auto;
+        margin-top: 25px;
+        overflow: initial;
+        scrollbar-width: visible; /* Firefox */
+        -ms-overflow-style: unset;  /* Internet Explorer 10+ */
+    }
+    aside::-webkit-scrollbar {
+        display: visible;
+    }
+    .aside-head{
+        position: sticky;
+        z-index: 1;
+        margin-top: 0px; 
+        top: 0px;
+        width: 100%;
+    }
+    .aside-head-h1{
+        margin-left: 10%;
+    }
+    .aside-head-h4{
+        margin-left: 40%;
+    }
+    .queue-options{
+        top: 9%;
+        right: 2%;
+        width: 30%;
+    }
+    .songs:first-of-type{
+        margin-top: 20px;
+    }
+    .songs-srno{
+        margin-left: 15%;
+    }
+    .songs-desc{
+        width: 30%;
+    }
+    /* Main Stations Section */
+    .stations-main-div{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 6px;
+    }
+    .stations-left-main-div{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 40%;
+        margin-bottom: 80px;
+    }
+    .stations-left-3{
+        background-color: #833ab4;
+    }
+    .stations-content-div{
+        width: 90%;
+    }
+    #workout{
+        top: -48%;
+        font-size: 1.2rem!important;
+    }
+    /* Main Themes Section */
+    .themes-outer-div{
+        height: 15vw;
+    }
+    /*--------------- Bottom Navbar Section ------------ */
+    .shuffle{
+        left: -58px;
+    }
+    .play-div{
+        position: relative;
+    }
+    .back, .play,.play-div, .forward, .loop{
+        left: -50px;
+    }
+    .progress-div{
+        width: 150px;
+    }
+    .bottom-extra-icons-div{
+        left: 54%;
+    }
+    .soundbar{
+        width: 80px;
+    }
+}
+
+/* For General Mobile Screens */
+@media only screen and (max-width: 415px){
+    body{
+        height: 100%;
+        margin-bottom: 100px;
+    }
+    /* Top Navbar Section */
+    .fav-nav-txt{
+        display: none;
+    }
+    /* Aside Playlist Section */
+    .aside-head-h4{
+        margin-left: 50px;
+    }
+    .queue-options{
+        top: 6%;
+    }
+    .songs-desc p:first-of-type{
+        word-break: break-all;
+        line-height: 1;
+    }
+    .songs-desc p:last-of-type{
+        margin-top: 28px;
+    }
+    /* Bottom Navbar Section */
+    .shuffle{
+        left: -75px;
+    }
+    .back,.play-div, .forward, .loop{
+        left: -75px;
+    }
+    .controls *:not(.loop){
+        margin-right: 5px;
+    }
+    .play-div{
+        height: 15px;
+        width: 20px;
+        padding: 10px;
+        padding-bottom: 22px;
+        padding-top: 5px;
+    }
+    .progress-div{
+        width: 220px;
+    }
+    .player *:not(.ls){
+        margin-right: 5px;
+    }
+    .bottom-extra-icons-div{
+        margin-top: 15px;
+        left: 48%;
+    }
+    .audio-icon, .soundbar{
+        margin-left: 5px!important;
+    }
+    /* Main Carousel Section */
+    .carousel1{
+        left: 20px;
+        margin-left: 65px;
+    }
+    .carousel2{
+        left: -20px;
+    }
+    .carousel3{
+        left: -65px;
+        margin-right: 20px;
+    }
+    /* Main Latest Release Section */
+    .latest-release-outer{
+        padding-left: 60px;
+        padding-right: 0;
+    }
+    .latest-release-poster{
+        width: 80%;
+    }
+    /* Main Popular Artists Section */
+    .popular-artists > div{
+        width: 35%;
+    }
+    /* Main Stations Section */
+    .stations-main-div{
+        width: 70%;
+    }
+    .stations-left-main-div{
+        width: 60%;
+    }
+    .stations-content-div > div{
+        margin-left: -20px;
+        width: 50%;
+    }
+    .stations-content-div p{
+        font-size: 1.5rem!important;
+    }
+    /* Main Themes Section */
+    .themes-outer-div{
+        height: 20vw;
+    }
+    .themes-outer-div .themes-inner-div span{
+        transform: scale(1.2);
+    }
+    .themes-outer-div:hover .themes-inner-div span{
+        transform: scale(0.75);
+    }
+}
+
+    /* For Very small width Mobile Screens like Iphone-5*/
+    @media only screen and (max-width: 360px){
+        /* Top Navbar Section */
+        .search{
+            z-index: 1;
+            top: -20%;
+            margin-left: -68px;
+            width: 150%;
+        }
+
+        /* Search Results Section */
+        .search-results-container{
+            justify-content: center;
+        }
+        .search-result-tile{
+            width: 50%;
+            margin-left: -19px;
+        }
+        .search-song-name{
+            font-size: 1rem;
+        }
+        .search-artist-name{
+            font-size: 0.8rem;
+        }
+
+        /* Aside Playlist Section */
+        .aside-head-h1{
+            margin-left: 5%;
+        }
+        .aside-head-h4{
+            margin-left: 20%;
+        }
+        .queue-options{
+            top: 10%;
+            right: 14%;
+        }
+        .songs-srno{
+            margin-left: 7%;
+        }
+        /* Bottom Navbar Section */
+        .bottom-extra-icons-div{
+            left: 58%;
+            background-color: transparent;
+        }
+        .playlist{
+            width: 20px!important;
+        }
+        .audio-icon{
+            font-size: 1rem!important;
+        }
+        .soundbar{
+            margin-top: 15px;
+        }
+        /* Main Carousel Section */
+        .carousel img{
+            width: 62%;
+        }
+        .carousel1{
+            margin-left: 52px;
+        }
+        /* Main Themes Section */
+        .themes-outer-div:nth-child(2) .themes-inner-div span{
+            transform: scale(1.1);
+        }
+        .themes-outer-div:nth-child(2):hover .themes-inner-div span{
+            transform: scale(0.75);
+        }
+}
+
+/* For xtremely small device width like Galaxy Fold */
+@media only screen and (max-width: 280px){
+    /* Aside Section */
+    .queue-options{
+        width: 49%;
+        right: -1%;
+    }
+    /* Bottom Navbr Section */
+    .progress-div{
+        width: 170px;
+    }
+    /* Main Carousel Section */
+    .carousel img{
+        width: 85%;
+    }
+    .carousel1{
+        margin-left: 62px;
+    }
+    /* Main Latest Release Section */
+    .latest-release-outer{
+        padding-left: 0;
+    }
+    .latest-release-poster{
+        width: 100%;
+        margin-right: 20px;
+    }
+}

@@ -1,0 +1,9 @@
+<%- include("partials/header") %>
+<%- include("navbar") %>  
+<% if(page === "main"){ %>
+    <%- include("main") %>
+<% }else{ %>
+    <%- include("search") %>
+<% } %>
+<%- include("playlist") %>  
+<%- include("partials/footer") %>  
